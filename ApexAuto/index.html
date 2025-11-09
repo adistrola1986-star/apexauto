@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX Auto Detailing - Olean, NY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="APEX Auto Detailing Logo" class="logo">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <!-- <li><a href="../index.html" class="portfolio">Back to my Portfolio</a></li> -->
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Car. Your Schedule. Our Expertise.</h1>
+                <p>Premium mobile auto detailing services in Olean, NY. We bring the car wash to you, saving you time while delivering professional results that will make your vehicle look showroom-ready.</p>
+                
+				<div class="hero-btns">
+                    <a href="#services" class="btn">Our Services</a>
+                    <a href="#contact" class="btn btn-outline">Book Now</a>
+					
+                </div>
+				
+            </div>
+		
+            
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Why Choose APEX Auto Detailing?</h3>
+                    <p>At APEX Auto Detailing, we believe that maintaining your vehicle should be convenient, high-quality, and hassle-free. That's why we bring our professional detailing services directly to your home or office, saving you valuable time.</p>
+                    <p>Our team of experienced detailers uses only premium products and advanced techniques to ensure your vehicle receives the care it deserves. From basic cleaning to premium packages with ceramic coatings, we offer comprehensive solutions for every need and budget.</p>
+                    <p>We proudly serve Olean, NY and surrounding areas with flexible scheduling options that work around your busy life.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/about-image.jpg" alt="Car detailing service">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <!-- Express Detail Card -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/express-detail.jpg" alt="Express Detail Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Express Detail</h3>
+                        <span class="price-tag">From $90</span>
+                        <p>Quick refreshment for your vehicle with essential cleaning services.</p>
+                        <ul class="service-features">
+                            <li>Exterior hand wash</li>
+                            <li>Wheel and tire cleaning with shine</li>
+                            <li>Interior vacuuming</li>
+                            <li>Dashboard and console wipe-down</li>
+                            <li>Interior and exterior window cleaning</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Standard Detail Card -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/standard-detail.jpg" alt="Standard Detail Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Standard Detail</h3>
+                        <span class="price-tag">From $150</span>
+                        <p>Comprehensive cleaning and protection for your vehicle.</p>
+                        <ul class="service-features">
+                            <li>All Express Detail services</li>
+                            <li>Interior steam cleaning</li>
+                            <li>Carpet and seat shampooing</li>
+                            <li>Leather seat conditioning</li>
+                            <li>Application of paint protectant</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Premium Detail Card -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/premium-detail.jpg" alt="Premium Detail Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Premium Detail</h3>
+                        <span class="price-tag">From $225</span>
+                        <p>The ultimate detailing experience for those who want the best.</p>
+                        <ul class="service-features">
+                            <li>All Standard Detail services</li>
+                            <li>Clay bar treatment</li>
+                            <li>Engine bay cleaning</li>
+                            <li>Application of ceramic sealant</li>
+                            <li>Headliner spot cleaning</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price List Section -->
+    <section class="price-list" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Pricing</h2>
+            </div>
+            
+            <!-- Complete Packages -->
+            <h3 class="price-category">Complete Packages</h3>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Package</th>
+                        <th>Sedan</th>
+                        <th>Small SUV</th>
+                        <th>Large SUV/Truck</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="package-name">Express Detail</td>
+                        <td class="price">$90</td>
+                        <td class="price">$110</td>
+                        <td class="price">$130</td>
+                    </tr>
+                    <tr>
+                        <td class="package-name">Standard Detail</td>
+                        <td class="price">$150</td>
+                        <td class="price">$180</td>
+                        <td class="price">$210</td>
+                    </tr>
+                    <tr>
+                        <td class="package-name">Premium Detail</td>
+                        <td class="price">$225</td>
+                        <td class="price">$275</td>
+                        <td class="price">$325</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- Interior-Only Packages -->
+            <h3 class="price-category">Interior-Only Packages</h3>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Package</th>
+                        <th>Sedan</th>
+                        <th>Small SUV</th>
+                        <th>Large SUV/Truck</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="package-name">Quick Refresh (Vacuum & Wipe-Down)</td>
+                        <td class="price">$75</td>
+                        <td class="price">$90</td>
+                        <td class="price">$105</td>
+                    </tr>
+                    <tr>
+                        <td class="package-name">Deep Clean (Shampoo & Steam)</td>
+                        <td class="price">$130</td>
+                        <td class="price">$160</td>
+                        <td class="price">$190</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- Add-Ons -->
+            <div class="add-ons">
+                <h3>Optional Add-Ons</h3>
+                <div class="add-ons-grid">
+                    <div class="add-on-item">
+                        <span class="add-on-name">Pet Hair Removal</span>
+                        <span class="add-on-price">$30</span>
+                    </div>
+                    <div class="add-on-item">
+                        <span class="add-on-name">Headlight Restoration</span>
+                        <span class="add-on-price">$45</span>
+                    </div>
+                    <div class="add-on-item">
+                        <span class="add-on-name">Engine Bay Detailing</span>
+                        <span class="add-on-price">$75</span>
+                    </div>
+                    <div class="add-on-item">
+                        <span class="add-on-name">Ceramic Coating (1-Year Protection)</span>
+                        <span class="add-on-price">From $250</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+            </div>
+            <div class="testimonial-slider">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"APEX transformed my car! I couldn't believe the results - it looked better than when I first bought it. Their attention to detail is amazing and the convenience of them coming to my home was priceless."</p>
+                    <p class="testimonial-author">James Rodriguez</p>
+                    <p class="testimonial-role">Olean, NY</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"I've tried several detailing services in the area, but none compare to APEX. The premium package was worth every penny - my SUV looks showroom new again. Highly recommended!"</p>
+                    <p class="testimonial-author">Sarah Johnson</p>
+                    <p class="testimonial-role">Olean, NY</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"As a busy professional, having APEX come to my office to detail my car was a game-changer. Great service, friendly staff, and excellent results. I'm a customer for life!"</p>
+                    <p class="testimonial-author">Michael Thompson</p>
+                    <p class="testimonial-role">Olean, NY</p>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="prev-btn" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots"></div>
+                <button class="next-btn" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Serving Olean, NY and surrounding areas</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@apexautodetailing.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 8:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="booking-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="express">Express Detail</option>
+                                <option value="standard">Standard Detail</option>
+                                <option value="premium">Premium Detail</option>
+                                <option value="quick-refresh">Quick Refresh (Interior)</option>
+                                <option value="deep-clean">Deep Clean (Interior)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicle">Vehicle Type</label>
+                            <select id="vehicle" name="vehicle" required>
+                                <option value="">Select Vehicle Type</option>
+                                <option value="sedan">Sedan</option>
+                                <option value="small-suv">Small SUV</option>
+                                <option value="large-suv">Large SUV/Truck</option>
+                            </select>
+                        </div>
+						<div class="form-group">
+                            <label>Do you have a water source we can use? (hose connection)</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="water-yes" name="water-source" value="yes" checked>
+                                    <label for="water-yes">Yes, I can provide water access</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="water-no" name="water-source" value="no">
+                                    <label for="water-no">No, please bring your own water</label>
+                                </div>
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Information</label>
+                            <textarea id="message" name="message"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Book Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <img src="images/vet-image.png" alt="APEX Auto Detailing Logo" class="footer-logo">
+                    <p>Professional mobile auto detailing services in Olean, NY. We bring the expertise to your doorstep.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Express Detail</a></li>
+                        <li><a href="#services">Standard Detail</a></li>
+                        <li><a href="#services">Premium Detail</a></li>
+                        <li><a href="#services">Interior-Only Packages</a></li>
+                        <li><a href="#services">Add-On Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter for special offers and updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 APEX Auto Detailing. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Auto Detailing - Service Record</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 10px;
+            color: #333;
+            font-size: 11px;
+            line-height: 1.2;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+
+            .header h1 {
+                margin: 0;
+                font-size: 20px;
+                color: #1a5276;
+            }
+
+            .header h2 {
+                margin: 3px 0 0;
+                font-size: 14px;
+                font-weight: normal;
+                color: #5d6d7e;
+            }
+
+        .section {
+            margin-bottom: 10px;
+        }
+
+            .section h3 {
+                background-color: #1a5276;
+                color: white;
+                padding: 3px 10px;
+                margin: 0 0 5px 0;
+                border-radius: 3px;
+                font-size: 12px;
+            }
+
+        .form-container {
+            border: 1px solid #ddd;
+            padding: 6px;
+            border-radius: 3px;
+            background-color: #f9f9f9;
+        }
+
+        .row {
+            display: flex;
+            margin-bottom: 5px;
+            flex-wrap: wrap;
+        }
+
+        .col-50 {
+            flex: 1;
+            min-width: 50px;
+            padding-right: 0px;
+        }
+
+        .field {
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+        }
+
+            .field label {
+                font-weight: bold;
+                margin-right: 5px;
+                font-size: 10px;
+                min-width: 50px;
+            }
+
+            .field input[type="text"] {
+                flex: 1;
+                padding: 3px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                font-size: 10px;
+            }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+            .checkbox-group input[type="checkbox"] {
+                margin-right: 3px;
+                width: 10px;
+                height: 10px;
+            }
+
+            .checkbox-group label {
+                font-size: 10px;
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 8px;
+            font-size: 10px;
+        }
+
+            table th, table td {
+                padding: 3px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+            table th {
+                background-color: #f5f5f5;
+                font-weight: bold;
+            }
+
+        .price-table td:nth-child(3),
+        .price-table td:nth-child(4),
+        .price-table td:nth-child(5) {
+            text-align: center;
+        }
+
+        .price-table th:nth-child(3),
+        .price-table th:nth-child(4),
+        .price-table th:nth-child(5) {
+            text-align: center;
+        }
+
+        .payment-table td:first-child {
+            width: 60%;
+        }
+
+        .payment-table td:last-child {
+            text-align: right;
+        }
+
+        .signature-line {
+            border-top: 1px solid #333;
+            margin-top: 15px;
+            padding-top: 2px;
+            font-size: 10px;
+        }
+
+        .notes-area {
+            width: 100%;
+            min-height: 50px;
+            padding: 3px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 10px;
+            overflow-y: hidden;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 5px;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+
+            .section h3 {
+                background-color: #1a5276 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            @page {
+                size: letter;
+                margin: 0.5cm;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        <h1>APEX AUTO DETAILING</h1>
+        <h2>SERVICE RECORD</h2>
+    </div>
+
+    <div class="row" style="margin-bottom: 8px;">
+        <div class="col-50">
+            <div class="section" style="margin-bottom: 8px;">
+                <h3>APPOINTMENT DETAILS</h3>
+                <div class="form-container">
+                    <div class="row" style="margin-bottom: 3px;">
+                        <div class="col-50" style="min-width: 200px;">
+                            <div class="field" style="margin-bottom: 3px;">
+                                <label>Date:</label>
+                                <input type="text" style="height: 14px;">
+                            </div>
+                        </div>
+                        <div class="col-50" style="min-width: 200px;">
+                            <div class="field" style="margin-bottom: 3px;">
+                                <label>Time:</label>
+                                <input type="text" style="height: 14px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 0;">
+                        <div class="col-50" style="min-width: 200px;">
+                            <div class="field" style="margin-bottom: 3px;">
+                                <label>Location:</label>
+                                <input type="text" style="height: 14px;">
+                            </div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-50">
+            <div class="section" style="margin-bottom: 8px;">
+                <h3>CUSTOMER INFORMATION</h3>
+                <div class="form-container">
+                    <div class="field" style="margin-bottom: 3px;">
+                        <label>Full Name:</label>
+                        <input type="text" style="height: 14px;">
+                    </div>
+                    <div class="row" style="margin-bottom: 3px;">
+                        <div class="col-50" style="min-width: 200px;">
+                            <div class="field" style="margin-bottom: 3px;">
+                                <label>Phone:</label>
+                                <input type="text" style="height: 14px;">
+                            </div>
+                        </div>
+                        <div class="col-50" style="min-width: 200px;">
+                            <div class="field" style="margin-bottom: 3px;">
+                                <label>Vehicle:</label>
+                                <input type="text" style="height: 14px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="margin-bottom: 8px;">
+        <h3>SERVICE PACKAGE SELECTION</h3>
+        <div class="form-container">
+            <table class="price-table" style="margin-bottom: 0;">
+                <tr>
+                    <th style="width: 14%; padding: 3px;">PACKAGE</th>
+                    <th style="width: 14%; padding: 3px;">DESCRIPTION</th>
+                    <th style="width: 20%; padding: 3px;">SEDAN</th>
+                    <th style="width: 14%; padding: 3px;">SMALL SUV</th>
+                    <th style="width: 14%; padding: 3px;">LARGE SUV</th>
+                </tr>
+                <tr>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="express">
+                            <label for="express" style="font-size: 10px; min-width: 0;">Express Detail</label>
+                        </div>
+                    </td>
+                    <td style="padding: 2px; font-size: 9px;">Basic exterior & interior</td>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group" style="justify-content: center;">
+                            <input type="checkbox" id="express-sedan">
+                            <label for="express-sedan" style="font-size: 10px; min-width: 0;">$90</label>
+                        </div>
+                    </td>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group" style="justify-content: center;">
+                            <input type="checkbox" id="express-small">
+                            <label for="express-small" style="font-size: 10px; min-width: 0;">$110</label>
+                        </div>
+                    </td>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group" style="justify-content: center;">
+                            <input type="checkbox" id="express-large">
+                            <label for="express-large" style="font-size: 10px; min-width: 0;">$130</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="standard">
+                            <label for="standard" style="font-size: 10px; min-width: 0;">Standard Detail</label>
+                        </div>
+                    </td>
+                    <td style="padding: 2px; font-size: 9px;">Comprehensive cleaning</td>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group" style="justify-content: safe center;">
+                            <input type="checkbox" id="standard-sedan">
+                            <label for="standard-sedan" style="font-size: 10px; min-width: 0;">$150</label>
+                        </div>
+                    </td>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group" style="justify-content: center;">
+                            <input type="checkbox" id="standard-small">
+                            <label for="standard-small" style="font-size: 10px; min-width: 0;">$180</label>
+                        </div>
+                    </td>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group" style="justify-content: center;">
+                            <input type="checkbox" id="standard-large">
+                            <label for="standard-large" style="font-size: 10px; min-width: 0;">$210</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="premium">
+                            <label for="premium" style="font-size: 10px; min-width: 0;">Premium Detail</label>
+                        </div>
+                    </td>
+                    <td style="padding: 2px; font-size: 9px;">Top-tier protection</td>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group" style="justify-content: center;">
+                            <input type="checkbox" id="premium-sedan">
+                            <label for="premium-sedan" style="font-size: 10px; min-width: 0;">$225</label>
+                        </div>
+                    </td>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group" style="justify-content: center;">
+                            <input type="checkbox" id="premium-small">
+                            <label for="premium-small" style="font-size: 10px; min-width: 0;">$275</label>
+                        </div>
+                    </td>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group" style="justify-content: center;">
+                            <input type="checkbox" id="premium-large">
+                            <label for="premium-large" style="font-size: 10px; min-width: 0;">$325</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="quick">
+                            <label for="quick" style="font-size: 10px; min-width: 0;">Quick Refresh</label>
+                        </div>
+                    </td>
+                    <td style="padding: 2px; font-size: 9px;">Interior vacuum & wipe</td>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group" style="justify-content: center;">
+                            <input type="checkbox" id="quick-sedan">
+                            <label for="quick-sedan" style="font-size: 10px; min-width: 0;">$75</label>
+                        </div>
+                    </td>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group" style="justify-content: center;">
+                            <input type="checkbox" id="quick-small">
+                            <label for="quick-small" style="font-size: 10px; min-width: 0;">$90</label>
+                        </div>
+                    </td>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group" style="justify-content: center;">
+                            <input type="checkbox" id="quick-large">
+                            <label for="quick-large" style="font-size: 10px; min-width: 0;">$105</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="deep">
+                            <label for="deep" style="font-size: 10px; min-width: 0;">Deep Clean</label>
+                        </div>
+                    </td>
+                    <td style="padding: 2px; font-size: 9px;">Interior shampoo & steam</td>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group" style="justify-content: center;">
+                            <input type="checkbox" id="deep-sedan">
+                            <label for="deep-sedan" style="font-size: 10px; min-width: 0;">$130</label>
+                        </div>
+                    </td>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group" style="justify-content: center;">
+                            <input type="checkbox" id="deep-small">
+                            <label for="deep-small" style="font-size: 10px; min-width: 0;">$160</label>
+                        </div>
+                    </td>
+                    <td style="padding: 2px;">
+                        <div class="checkbox-group" style="justify-content: center;">
+                            <input type="checkbox" id="deep-large">
+                            <label for="deep-large" style="font-size: 10px; min-width: 0;">$190</label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 8px;">
+        <div class="col-50">
+            <div class="section" style="margin-bottom: 8px;">
+                <h3>OPTIONAL ADD-ONS</h3>
+                <div class="form-container">
+                    <div style="display: flex; flex-wrap: wrap;">
+                        <div style="width: 50%; margin-bottom: 3px;">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="pet-hair">
+                                <label for="pet-hair" style="font-size: 10px; min-width: 0;">Pet Hair Removal — $30</label>
+                            </div>
+                        </div>
+                        <div style="width: 50%; margin-bottom: 3px;">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="headlight">
+                                <label for="headlight" style="font-size: 10px; min-width: 0;">Headlight Restoration — $45</label>
+                            </div>
+                        </div>
+                        <div style="width: 50%; margin-bottom: 3px;">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="engine">
+                                <label for="engine" style="font-size: 10px; min-width: 0;">Engine Bay Detailing — $75</label>
+                            </div>
+                        </div>
+                        <div style="width: 50%; margin-bottom: 3px;">
+                            <div style="display: flex; align-items: center;">
+                                <input type="checkbox" id="ceramic" style="margin-right: 3px;">
+                                <label for="ceramic" style="font-size: 10px; min-width: 0;">Ceramic Coating — $</label>
+                                <input type="text" style="width: 40px; height: 12px; margin-left: 2px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-50">
+            <div class="section" style="margin-bottom: 8px;">
+                <h3>TECHNICIAN NOTES</h3>
+                <div class="form-container">
+                    <textarea class="notes-area" style="min-height: 275px; width: 354px; overflow-y: hidden;"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="margin-bottom: 8px;">
+        <h3>PAYMENT INFORMATION</h3>
+        <div class="form-container">
+            <table class="payment-table" style="margin-bottom: 3px;">
+                <tr>
+                    <td style="padding: 2px;">Service Package:</td>
+                    <td style="padding: 2px;">
+                        <!-- JavaScript will replace this with a dropdown -->
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px;">Add-Ons:</td>
+                    <td style="padding: 2px;">
+                        <!-- JavaScript will replace this with checkboxes -->
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px;">Discount/Promo:</td>
+                    <td style="padding: 2px;">
+                        <!-- JavaScript will replace this with a dropdown -->
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px;">Sales Tax:</td>
+                    <td style="padding: 2px;">
+                        <div style="display: flex; align-items: center; width: 100%;">
+                            <input type="text" style="width: 500px; height: 12px; text-align: left; border: none; border-bottom: 0px; margin-right: 20px;" value="NYSS 8%" readonly>
+                            $<input type="text" name="tax-price" style="width: 50px; height: 12px; text-align: right; border: none; border-bottom: 1px solid #ccc; background: transparent;" readonly>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px; font-weight: bold;">TOTAL DUE:</td>
+                    <td style="padding: 2px; font-weight: bold;">$<input type="text" name="total-price" style="width: 50px; height: 12px; text-align: right; border: none; border-bottom: 1px solid #ccc; background: transparent; font-weight: bold;" readonly></td>
+                </tr>
+            </table>
+
+            <div style="display: flex; gap: 10px; margin-top: 3px;">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="cash">
+                    <label for="cash" style="font-size: 10px; min-width: 0;">Cash</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="card">
+                    <label for="card" style="font-size: 10px; min-width: 0;">Card</label>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <input type="checkbox" id="other-payment" style="margin-right: 3px;">
+                    <label for="other-payment" style="font-size: 10px; min-width: 0;">Other:</label>
+                    <input type="text" style="width: 70px; height: 12px; margin-left: 2px; display: none;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="margin-bottom: 5px;">
+        <h3>CONFIRMATION</h3>
+        <div class="form-container">
+            <div style="font-size: 9px; margin-bottom: 5px;">I acknowledge that the services listed above have been performed to my satisfaction.</div>
+
+            <div style="display: flex; justify-content: space-between;">
+                <div style="width: 45%;">
+                    <div class="signature-line">
+                        Customer Signature &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date
+                    </div>
+                </div>
+                <div style="width: 45%;">
+                    <div class="signature-line">
+                        Technician Signature &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Thank you for choosing Apex Auto Detailing! | (585) 378-0128 | contact@apexautodtl.com | www.apexautodtl.com
+    </div>
+    <script>
+        // Service package details from the price list
+        const serviceDetails = {
+            "express": {
+                "name": "Express Detail",
+                "sedan": 90.00,
+                "smallSuv": 110.00,
+                "largeSuv": 130.00,
+                "features": [
+                    "Exterior hand wash",
+                    "Wheel and tire cleaning with shine",
+                    "Interior vacuuming",
+                    "Dashboard and console wipe-down",
+                    "Interior and exterior window cleaning"
+                ]
+            },
+            "standard": {
+                "name": "Standard Detail",
+                "sedan": 150.00,
+                "smallSuv": 180.00,
+                "largeSuv": 210.00,
+                "features": [
+                    "Exterior hand wash",
+                    "Wheel and tire cleaning with shine",
+                    "Interior vacuuming",
+                    "Dashboard and console wipe-down",
+                    "Interior and exterior window cleaning",
+                    "Interior steam cleaning",
+                    "Carpet and seat shampooing",
+                    "Leather seat conditioning (if applicable)",
+                    "Application of paint protectant"
+                ]
+            },
+            "premium": {
+                "name": "Premium Detail",
+                "sedan": 225.00,
+                "smallSuv": 275.00,
+                "largeSuv": 325.00,
+                "features": [
+                    "Exterior hand wash",
+                    "Wheel and tire cleaning with shine",
+                    "Interior vacuuming",
+                    "Dashboard and console wipe-down",
+                    "Interior and exterior window cleaning",
+                    "Interior steam cleaning",
+                    "Carpet and seat shampooing",
+                    "Leather seat conditioning (if applicable)",
+                    "Application of paint protectant",
+                    "Clay bar treatment",
+                    "Engine bay cleaning",
+                    "Application of ceramic sealant",
+                    "Headliner spot cleaning"
+                ]
+            },
+            "quick": {
+                "name": "Quick Refresh",
+                "sedan": 75.00,
+                "smallSuv": 90.00,
+                "largeSuv": 105.00,
+                "features": [
+                    "Interior vacuuming",
+                    "Dashboard and console wipe-down",
+                    "Quick interior wipe"
+                ]
+            },
+            "deep": {
+                "name": "Deep Clean",
+                "sedan": 130.00,
+                "smallSuv": 160.00,
+                "largeSuv": 190.00,
+                "features": [
+                    "Interior vacuuming",
+                    "Dashboard and console wipe-down",
+                    "Interior steam cleaning",
+                    "Carpet and seat shampooing",
+                    "Leather seat conditioning (if applicable)"
+                ]
+            }
+        };
+
+        // Add-ons details
+        const addOns = {
+            "pet-hair": { name: "Pet Hair Removal", price: 30.00, code: "PETR" },
+            "headlight": { name: "Headlight Restoration", price: 45.00, code: "HDLR" },
+            "engine": { name: "Engine Bay Detailing", price: 75.00, code: "ENGB" },
+            "ceramic": { name: "Ceramic Coating", price: 250.00, code: "CERM" }
+        };
+
+        // Discount options
+        const discounts = {
+            "NONE": { name: "No Discount", rate: 0.00 },
+            "MIL/VET": { name: "Military/Veteran Discount", rate: 0.10 },
+            "LOYAL": { name: "Loyalty Discount", rate: 0.05 },
+            "FIRST": { name: "First-Time Customer", rate: 0.15 }
+        };
+
+        // Variables to track current selections
+        let selectedService = null;
+        let selectedAddOns = [];
+        let selectedDiscount = "NONE";
+
+        // Function to auto-resize textarea based on content
+        function autoResizeTextarea(textarea) {
+            // Reset height to allow the textarea to shrink if text is removed
+            textarea.style.height = 'auto';
+
+            // Set the height to match the scroll height (content height)
+            textarea.style.height = textarea.scrollHeight + 'px';
+        }
+
+        // Function to update technician notes based on selections
+        function updateTechnicianNotes() {
+            const notesArea = document.querySelector('.notes-area');
+
+            // If no service is selected, clear the notes
+            if (!selectedService) {
+                notesArea.value = '';
+                autoResizeTextarea(notesArea);
+                return;
+            }
+
+            // Extract service details
+            const [packageType, vehicleType] = selectedService.split('-');
+
+            // Map codes to keys
+            let packageKey;
+            if (packageType === 'express') packageKey = 'express';
+            else if (packageType === 'standard') packageKey = 'standard';
+            else if (packageType === 'premium') packageKey = 'premium';
+            else if (packageType === 'quick') packageKey = 'quick';
+            else if (packageType === 'deep') packageKey = 'deep';
+
+            let vehicleTypeKey;
+            if (vehicleType === 'sedan') vehicleTypeKey = 'sedan';
+            else if (vehicleType === 'smallSuv') vehicleTypeKey = 'smallSuv';
+            else if (vehicleType === 'largeSuv') vehicleTypeKey = 'largeSuv';
+
+            const packageInfo = serviceDetails[packageKey];
+            const vehicleTypeText = vehicleType === 'sedan' ? 'Sedan' :
+                (vehicleType === 'smallSuv' ? 'Small SUV' : 'Large SUV');
+            const packagePrice = packageInfo[vehicleTypeKey];
+
+            // Build notes text
+            let notesText = `-${packageInfo.name}\n`;
+            notesText += `  -${vehicleTypeText}: $${packagePrice.toFixed(2)}\n`;
+
+            // Add service features
+            packageInfo.features.forEach(feature => {
+                notesText += `    - ${feature}\n`;
+            });
+
+            // Add selected add-ons
+            if (selectedAddOns.length > 0) {
+                notesText += '\n-Selected Add-Ons:\n';
+                selectedAddOns.forEach(addOnId => {
+                    const addOn = addOns[addOnId];
+                    notesText += `  - ${addOn.name} — $${addOn.price.toFixed(2)}\n`;
+                });
+            }
+
+            notesArea.value = notesText;
+
+            // Auto-resize the textarea to fit the content
+            autoResizeTextarea(notesArea);
+        }
+
+        // Function to calculate and update prices
+        function updatePrices() {
+            // Get service price
+            let servicePrice = 0;
+            let serviceLabel = "";
+
+            if (selectedService) {
+                const [packageType, vehicleType] = selectedService.split('-');
+
+                // Map codes to keys
+                let packageKey;
+                if (packageType === 'express') packageKey = 'express';
+                else if (packageType === 'standard') packageKey = 'standard';
+                else if (packageType === 'premium') packageKey = 'premium';
+                else if (packageType === 'quick') packageKey = 'quick';
+                else if (packageType === 'deep') packageKey = 'deep';
+
+                let vehicleTypeKey;
+                if (vehicleType === 'sedan') vehicleTypeKey = 'sedan';
+                else if (vehicleType === 'smallSuv') vehicleTypeKey = 'smallSuv';
+                else if (vehicleType === 'largeSuv') vehicleTypeKey = 'largeSuv';
+
+                // Generate readable label
+                const packageInfo = serviceDetails[packageKey];
+                const vehicleTypeText = vehicleType === 'sedan' ? 'Sedan' :
+                    (vehicleType === 'smallSuv' ? 'Small SUV' : 'Large SUV');
+                serviceLabel = `${packageInfo.name} - ${vehicleTypeText}`;
+
+                // Get price
+                servicePrice = packageInfo[vehicleTypeKey];
+            }
+
+            // Calculate add-ons total
+            const addOnsTotal = selectedAddOns.reduce((total, addOnId) => {
+                return total + addOns[addOnId].price;
+            }, 0);
+
+            // Generate add-ons label
+            const addOnLabels = selectedAddOns.map(id => addOns[id].code).join(' ');
+
+            // Calculate subtotal
+            const subtotal = servicePrice + addOnsTotal;
+
+            // Calculate discount
+            const discountRate = discounts[selectedDiscount].rate;
+            const discountAmount = subtotal * discountRate;
+
+            // Calculate tax (8% NY state sales tax)
+            const taxRate = 0.08;
+            const taxAmount = (subtotal - discountAmount) * taxRate;
+
+            // Calculate total
+            const total = subtotal - discountAmount + taxAmount;
+
+            // Update package dropdown and price
+            const packageSelect = document.querySelector('select[name="package-select"]');
+            const packagePrice = document.querySelector('input[name="package-price"]');
+
+            if (packageSelect && packagePrice) {
+                // Find the option that matches our selected service
+                for (let i = 0; i < packageSelect.options.length; i++) {
+                    if (packageSelect.options[i].value === selectedService) {
+                        packageSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+
+                packagePrice.value = servicePrice.toFixed(2);
+            }
+
+            // Update add-ons price
+            const addOnsPrice = document.querySelector('input[name="addons-price"]');
+            if (addOnsPrice) {
+                addOnsPrice.value = selectedAddOns.length > 0 ? addOnsTotal.toFixed(2) : '';
+            }
+
+            // Update add-on checkboxes in payment section
+            const addOnCheckboxes = document.querySelectorAll('.addon-checkbox');
+            addOnCheckboxes.forEach(checkbox => {
+                checkbox.checked = selectedAddOns.includes(checkbox.value);
+            });
+
+            // Update discount dropdown and price
+            const discountSelect = document.querySelector('select[name="discount-select"]');
+            const discountPrice = document.querySelector('input[name="discount-price"]');
+
+            if (discountSelect && discountPrice) {
+                // Find the option that matches our selected discount
+                for (let i = 0; i < discountSelect.options.length; i++) {
+                    if (discountSelect.options[i].value === selectedDiscount) {
+                        discountSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+
+                discountPrice.value = discountAmount > 0 ? `-${discountAmount.toFixed(2)}` : '';
+            }
+
+            // Update tax price
+            const taxPrice = document.querySelector('input[name="tax-price"]');
+            if (taxPrice) {
+                taxPrice.value = taxAmount.toFixed(2);
+            }
+
+            // Update total price
+            const totalPrice = document.querySelector('input[name="total-price"]');
+            if (totalPrice) {
+                totalPrice.value = total.toFixed(2);
+            }
+        }
+
+        // Function to sync service selection
+        function syncServiceSelection() {
+            // Get all service checkboxes
+            const serviceCheckboxes = document.querySelectorAll('.price-table input[type="checkbox"]');
+            let selectedCheckbox = null;
+
+            // Find the selected checkbox
+            serviceCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    const id = checkbox.id;
+                    const parts = id.split('-');
+                    if (parts.length === 2) {
+                        const packageType = parts[0];
+                        const vehicleType = parts[1] || '';
+
+                        if (vehicleType === 'sedan') {
+                            selectedService = `${packageType}-sedan`;
+                        } else if (vehicleType === 'small') {
+                            selectedService = `${packageType}-smallSuv`;
+                        } else if (vehicleType === 'large') {
+                            selectedService = `${packageType}-largeSuv`;
+                        }
+                    }
+                }
+            });
+
+            // Update UI
+            updateTechnicianNotes();
+            updatePrices();
+        }
+
+        // Function to sync add-ons selection
+        function syncAddOnsSelection() {
+            // Get all add-on checkboxes
+            const addOnCheckboxes = document.querySelectorAll('.section:nth-of-type(3) .checkbox-group input[type="checkbox"]');
+
+            // Clear selected add-ons
+            selectedAddOns = [];
+
+            // Find selected add-ons
+            addOnCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    const id = checkbox.id;
+                    if (id === 'pet-hair') selectedAddOns.push('pet-hair');
+                    else if (id === 'headlight') selectedAddOns.push('headlight');
+                    else if (id === 'engine') selectedAddOns.push('engine');
+                    else if (id === 'ceramic') selectedAddOns.push('ceramic');
+                }
+            });
+
+            // Update UI
+            updateTechnicianNotes();
+            updatePrices();
+        }
+
+        // Set up event listeners
+        document.addEventListener('DOMContentLoaded', function () {
+            // Set up the auto-resize for the notes textarea
+            const notesArea = document.querySelector('.notes-area');
+
+            // Initial resize
+            if (notesArea) {
+                autoResizeTextarea(notesArea);
+
+                // Add event listener for direct input
+                notesArea.addEventListener('input', function () {
+                    autoResizeTextarea(this);
+                });
+            }
+
+            // Create payment information dropdown for service package
+            const packageRow = document.querySelector('.payment-table tr:first-child');
+            const packageCell = packageRow?.querySelector('td:nth-child(2)');
+
+            if (packageCell) {
+                // Clear existing content
+                packageCell.innerHTML = '';
+
+                // Create dropdown and price input
+                const packageContainer = document.createElement('div');
+                packageContainer.style.display = 'flex';
+                packageContainer.style.alignItems = 'center';
+                packageContainer.style.width = '100%';
+
+                const packageSelect = document.createElement('select');
+                packageSelect.style.flex = '1';
+                packageSelect.style.height = '16px';
+                packageSelect.style.fontSize = '10px';
+                packageSelect.style.marginRight = '20px';
+                packageSelect.name = 'package-select';
+
+                // Add empty option
+                const emptyOption = document.createElement('option');
+                emptyOption.value = '';
+                emptyOption.textContent = '-- Select Package --';
+                packageSelect.appendChild(emptyOption);
+
+                // Add options for each package and vehicle type
+                const packages = [
+                    { key: 'express', code: 'EXPD', name: 'Express Detail' },
+                    { key: 'standard', code: 'STDD', name: 'Standard Detail' },
+                    { key: 'premium', code: 'PRMD', name: 'Premium Detail' },
+                    { key: 'quick', code: 'QCKR', name: 'Quick Refresh' },
+                    { key: 'deep', code: 'DPCC', name: 'Deep Clean' }
+                ];
+
+                const vehicleTypes = [
+                    { key: 'sedan', code: 'SDN', name: 'Sedan' },
+                    { key: 'smallSuv', code: 'SSUV', name: 'Small SUV' },
+                    { key: 'largeSuv', code: 'LSUV', name: 'Large SUV' }
+                ];
+
+                // Create option groups for each package
+                packages.forEach(pkg => {
+                    const optgroup = document.createElement('optgroup');
+                    optgroup.label = pkg.name;
+
+                    // Add vehicle type options
+                    vehicleTypes.forEach(vehicle => {
+                        const option = document.createElement('option');
+                        option.value = `${pkg.key}-${vehicle.key}`;
+                        option.textContent = `${pkg.name} - ${vehicle.name}`;
+                        optgroup.appendChild(option);
+                    });
+
+                    packageSelect.appendChild(optgroup);
+                });
+
+                packageSelect.addEventListener('change', function () {
+                    selectedService = this.value;
+
+                    // Update the checkboxes in the service section
+                    if (selectedService) {
+                        const [packageType, vehicleType] = selectedService.split('-');
+
+                        // Find and check the corresponding checkbox
+                        const checkboxId = packageType + '-' +
+                            (vehicleType === 'sedan' ? 'sedan' :
+                                vehicleType === 'smallSuv' ? 'small' :
+                                    'large');
+
+                        const checkbox = document.getElementById(checkboxId);
+                        if (checkbox) {
+                            checkbox.checked = true;
+                        }
+                    }
+
+                    updateTechnicianNotes();
+                    updatePrices();
+                });
+
+                const priceInput = document.createElement('div');
+                priceInput.innerHTML = '$<input type="text" name="package-price" style="width: 50px; height: 12px; text-align: right; border: none; border-bottom: 1px solid #ccc; background: transparent;" readonly>';
+
+                packageContainer.appendChild(packageSelect);
+                packageContainer.appendChild(priceInput);
+
+                packageCell.appendChild(packageContainer);
+            }
+
+            // Create add-ons row in payment section
+            const addOnsRow = document.querySelector('.payment-table tr:nth-child(2)');
+            const addOnsCell = addOnsRow?.querySelector('td:nth-child(2)');
+
+            if (addOnsCell) {
+                // Clear existing content
+                addOnsCell.innerHTML = '';
+
+                // Create container for add-ons
+                const addOnsContainer = document.createElement('div');
+                addOnsContainer.style.display = 'flex';
+                addOnsContainer.style.alignItems = 'center';
+                addOnsContainer.style.width = '100%';
+
+                // Create checkboxes for add-ons
+                const checkboxContainer = document.createElement('div');
+                checkboxContainer.style.display = 'flex';
+                checkboxContainer.style.flexWrap = 'wrap';
+                checkboxContainer.style.flex = '1';
+
+                const addOnsList = [
+                    { id: 'pet-hair', code: 'PETR', name: 'Pet Hair Removal' },
+                    { id: 'headlight', code: 'HDLR', name: 'Headlight Restoration' },
+                    { id: 'engine', code: 'ENGB', name: 'Engine Bay Detailing' },
+                    { id: 'ceramic', code: 'CERM', name: 'Ceramic Coating' }
+                ];
+
+                addOnsList.forEach(addon => {
+                    const checkboxWrapper = document.createElement('div');
+                    checkboxWrapper.style.marginRight = '10px';
+                    checkboxWrapper.style.marginBottom = '3px';
+
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.id = `payment-${addon.id}`;
+                    checkbox.className = 'addon-checkbox';
+                    checkbox.value = addon.id;
+                    checkbox.style.marginRight = '3px';
+
+                    const label = document.createElement('label');
+                    label.htmlFor = `payment-${addon.id}`;
+                    label.textContent = `${addon.code}`;
+                    label.style.fontSize = '10px';
+
+                    checkbox.addEventListener('change', function () {
+                        // Update the selectedAddOns array
+                        if (this.checked) {
+                            if (!selectedAddOns.includes(addon.id)) {
+                                selectedAddOns.push(addon.id);
+                            }
+                        } else {
+                            const index = selectedAddOns.indexOf(addon.id);
+                            if (index !== -1) {
+                                selectedAddOns.splice(index, 1);
+                            }
+                        }
+
+                        // Sync with the original add-on checkboxes
+                        const originalCheckbox = document.getElementById(addon.id);
+                        if (originalCheckbox) {
+                            originalCheckbox.checked = this.checked;
+                        }
+
+                        updateTechnicianNotes();
+                        updatePrices();
+                    });
+
+                    checkboxWrapper.appendChild(checkbox);
+                    checkboxWrapper.appendChild(label);
+                    checkboxContainer.appendChild(checkboxWrapper);
+                });
+
+                const addOnsPriceInput = document.createElement('div');
+                addOnsPriceInput.innerHTML = '$<input type="text" name="addons-price" style="width: 50px; height: 12px; text-align: right; border: none; border-bottom: 1px solid #ccc; background: transparent;" readonly>';
+
+                addOnsContainer.appendChild(checkboxContainer);
+                addOnsContainer.appendChild(addOnsPriceInput);
+
+                addOnsCell.appendChild(addOnsContainer);
+            }
+
+            // Create discount dropdown
+            const discountRow = document.querySelector('.payment-table tr:nth-child(3)');
+            const discountCell = discountRow?.querySelector('td:nth-child(2)');
+
+            if (discountCell) {
+                // Clear existing content
+                discountCell.innerHTML = '';
+
+                // Create dropdown and price input
+                const discountContainer = document.createElement('div');
+                discountContainer.style.display = 'flex';
+                discountContainer.style.alignItems = 'center';
+                discountContainer.style.width = '100%';
+
+                const discountSelect = document.createElement('select');
+                discountSelect.style.flex = '1';
+                discountSelect.style.height = '16px';
+                discountSelect.style.fontSize = '10px';
+                discountSelect.style.marginRight = '20px';
+                discountSelect.name = 'discount-select';
+
+                // Add options to dropdown
+                for (const [code, discount] of Object.entries(discounts)) {
+                    const option = document.createElement('option');
+                    option.value = code;
+                    option.textContent = `${code === 'NONE' ? '- N/A' : code} (${(discount.rate * 100).toFixed(0)}%)`;
+                    discountSelect.appendChild(option);
+                }
+
+                discountSelect.addEventListener('change', function () {
+                    selectedDiscount = this.value;
+                    updatePrices();
+                });
+
+                const discountPriceInput = document.createElement('div');
+                discountPriceInput.innerHTML = '$<input type="text" name="discount-price" style="width: 50px; height: 12px; text-align: right; border: none; border-bottom: 1px solid #ccc; background: transparent;" readonly>';
+
+                discountContainer.appendChild(discountSelect);
+                discountContainer.appendChild(discountPriceInput);
+
+                discountCell.appendChild(discountContainer);
+            }
+
+            // Add event handlers to service package checkboxes
+            const serviceCheckboxes = document.querySelectorAll('.price-table input[type="checkbox"]');
+            serviceCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function () {
+                    // Sync with other checkboxes in the same row
+                    const id = this.id;
+                    const parts = id.split('-');
+
+                    if (parts.length === 2) {
+                        // Find all checkboxes in the same package row
+                        const packageCheckboxes = document.querySelectorAll(`.price-table input[id^="${parts[0]}-"]`);
+
+                        // Uncheck other checkboxes in the same row
+                        packageCheckboxes.forEach(cb => {
+                            if (cb !== this) {
+                                cb.checked = false;
+                            }
+                        });
+                    }
+
+                    syncServiceSelection();
+                });
+            });
+
+            // Add event handlers to add-on checkboxes
+            const addOnCheckboxes = document.querySelectorAll('.section:nth-of-type(3) .checkbox-group input[type="checkbox"]');
+            addOnCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function () {
+                    // Update payment section checkboxes
+                    const id = this.id;
+                    const paymentCheckbox = document.getElementById(`payment-${id}`);
+                    if (paymentCheckbox) {
+                        paymentCheckbox.checked = this.checked;
+                    }
+
+                    syncAddOnsSelection();
+                });
+            });
+
+            // Set up payment method checkboxes
+            const paymentMethods = document.querySelectorAll('.checkbox-group input[type="checkbox"][id^="cash"], .checkbox-group input[type="checkbox"][id^="card"], .checkbox-group input[type="checkbox"][id^="other"]');
+            paymentMethods.forEach(checkbox => {
+                checkbox.addEventListener('change', function () {
+                    if (this.checked) {
+                        // Uncheck other payment methods
+                        paymentMethods.forEach(cb => {
+                            if (cb !== this) {
+                                cb.checked = false;
+                            }
+                        });
+
+                        // Show/hide the "Other" input field
+                        const otherInput = document.querySelector('#other-payment + label + input');
+                        if (otherInput) {
+                            otherInput.style.display = this.id === 'other-payment' ? 'inline-block' : 'none';
+                        }
+                    }
+                });
+            });
+
+            // Initial setup - check if any service is already selected
+            syncServiceSelection();
+            syncAddOnsSelection();
+        });
+
+    </script>
+</body>
+</html>
